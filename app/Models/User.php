@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Traits\SecuritySystemTrait;
 use App\Traits\utils\SlugTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -24,6 +25,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use HasRoles;
     use Notifiable;
+    use SecuritySystemTrait;
     use SlugTrait;
     use SoftDeletes;
     use TwoFactorAuthenticatable;
@@ -72,5 +74,15 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function profile()
+    {
+        return $this->morphOne(Profile::class, 'profileable');
+    }
+
+    public function phones()
+    {
+        return $this->morphMany(Phone::class, 'phoneable');
     }
 }

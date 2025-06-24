@@ -48,7 +48,8 @@ class RoleResource extends Resource implements HasShieldPermissions
                                 Forms\Components\TextInput::make('name')
                                     ->label(__('filament-shield::filament-shield.field.name'))
                                     ->unique(
-                                        ignoreRecord: true, /** @phpstan-ignore-next-line */
+                                        ignoreRecord: true,
+                                        /** @phpstan-ignore-next-line */
                                         modifyRuleUsing: fn (Unique $rule) => ! Utils::isTenancyEnabled() ? $rule : $rule->where(Utils::getTenantModelForeignKey(), Filament::getTenant()?->id)
                                     )
                                     ->required()
@@ -112,7 +113,7 @@ class RoleResource extends Resource implements HasShieldPermissions
                     ->colors(['success']),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label(__('filament-shield::filament-shield.column.updated_at'))
-                    ->dateTime(),
+                    ->date(),
             ])
             ->filters([
                 //

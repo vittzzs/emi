@@ -8,7 +8,7 @@ return [
     */
 
     'column.name' => 'Nombre',
-    'column.guard_name' => 'Guard',
+    'column.guard_name' => 'Acceso',
     'column.roles' => 'Roles',
     'column.permissions' => 'Permisos',
     'column.updated_at' => 'Actualizado el',
@@ -20,7 +20,7 @@ return [
     */
 
     'field.name' => 'Nombre',
-    'field.guard_name' => 'Guard',
+    'field.guard_name' => 'Accseso',
     'field.permissions' => 'Permisos',
     'field.select_all.name' => 'Seleccionar todos',
     'field.select_all.message' => 'Habilitar todos los permisos actualmente <span class="text-primary font-medium">habilitados</span> para este rol',
@@ -31,7 +31,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'nav.group' => 'Filament Shield',
+    'nav.group' => 'Administración',
     'nav.role.label' => 'Roles',
     'nav.role.icon' => 'heroicon-o-shield-check',
     'resource.label.role' => 'Rol',
